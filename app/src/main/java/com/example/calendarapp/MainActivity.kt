@@ -1,6 +1,7 @@
 package com.example.calendarapp
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,6 +27,13 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        val login_btn = findViewById<Button>(R.id.login_btn)
+
+        login_btn.setOnClickListener {
+
+        }
+
     }
 }
 
