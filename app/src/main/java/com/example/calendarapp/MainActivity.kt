@@ -2,6 +2,8 @@ package com.example.calendarapp
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,9 +30,17 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        val login_btn = findViewById<Button>(R.id.login_btn)
+        val username = findViewById<EditText>(R.id.username_et)
+        val password = findViewById<EditText>(R.id.password_et)
+        val loginButton = findViewById<Button>(R.id.login_btn)
 
-        login_btn.setOnClickListener {
+        loginButton.setOnClickListener {
+
+           var status = if (username.text.toString().equals("username")
+                &&password.text.toString().equals("password")) "Logged In Successfully"
+            else "Log In Failed"
+
+            Toast.makeText(this,status,Toast.LENGTH_SHORT).show()
 
         }
 
