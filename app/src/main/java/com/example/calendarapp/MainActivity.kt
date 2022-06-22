@@ -26,19 +26,17 @@ class MainActivity : AppCompatActivity() {
                     // set this date in TextView for Display
                     dateTV.setText(Date)
                 })
-        val username = findViewById<EditText>(R.id.username_et)
-        val password = findViewById<EditText>(R.id.password_et)
-        val loginButton = findViewById<Button>(R.id.login_btn)
 
-        loginButton.setOnClickListener {
 
-            var status = if (username.text.toString().equals("username")
-                &&password.text.toString().equals("password")) "Logged In Successfully"
-            else "Log In Failed"
 
-            Toast.makeText(this,status,Toast.LENGTH_SHORT).show()
+
+
+
+
+
+
 
         }
     }
-}
+
 

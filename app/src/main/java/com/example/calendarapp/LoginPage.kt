@@ -1,4 +1,9 @@
 package com.example.calendarapp
 
-class LoginPage {
+import androidx.appcompat.app.AppCompatActivity
+
+class LoginPage : AppCompatActivity() {
+
+
+
 }
