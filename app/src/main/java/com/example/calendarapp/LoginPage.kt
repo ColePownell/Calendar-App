@@ -15,7 +15,7 @@ class LoginPage : AppCompatActivity() {
 
 
 
-        val test = findViewById<EditText>(R.id.username_et);
+
 
 
     }
