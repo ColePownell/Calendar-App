@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginPage">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,16 +30,75 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textSize="16sp"
+            android:layout_marginTop="5sp"
             android:text="Welcome message for every user they will login  to this page."
             android:textColor="@android:color/black">
         </TextView>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="40sp"
+            android:hint="Username"
+            android:gravity="center"
+            android:textColorHint="@android:color/black"
+            android:layout_height="48sp"
+            android:layout_marginTop="25sp"
             android:background="@drawable/rounded_border">
         </EditText>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48sp"
+            android:gravity="center"
+            android:layout_marginTop="20sp"
+            android:hint="Password"
+            android:inputType="textWebPassword"
+            android:textColorHint="@android:color/black"
+            android:background="@drawable/rounded_border">
+        </EditText>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@android:color/black"
+            android:text="Login"
+            android:textAllCaps="false">
+        </Button>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Forgot Password"
+                android:textColor="@android:color/black">
+            </TextView>
+
+            <View
+                android:layout_width="1sp"
+                android:layout_height="match_parent"
+                android:background="@android:color/black">
+            </View>
+
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:text="Register">
+            </TextView>
+
+        </LinearLayout>
 
     </LinearLayout>
 
