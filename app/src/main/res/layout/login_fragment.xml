@@ -37,6 +37,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:hint="Username"
             android:gravity="center"
@@ -47,6 +48,7 @@
         </EditText>
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="48sp"
             android:gravity="center"
@@ -58,6 +60,7 @@
         </EditText>
 
         <Button
+            android:id="@+id/loginBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
@@ -73,30 +76,18 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-
-            <TextView
-                android:layout_width="0sp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Forgot Password"
-                android:textColor="@android:color/black">
-            </TextView>
-
-            <View
-                android:layout_width="1sp"
-                android:layout_height="match_parent"
-                android:background="@android:color/black">
-            </View>
-
-            <TextView
-                android:layout_width="0sp"
+            <Button
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_weight="1"
                 android:textColor="@android:color/black"
-                android:text="Register">
-            </TextView>
+                android:text="Register"
+                android:textAllCaps="false"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/rounded_button">
+
+            </Button>
 
         </LinearLayout>
 
