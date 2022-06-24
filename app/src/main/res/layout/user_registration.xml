@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="35sp"
+            android:textStyle="bold">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_marginTop="5sp"
+            android:text="Enter Information To Create A New Account"
+            android:textColor="@android:color/black">
+        </TextView>
+
+        <EditText
+            android:id="@+id/new_username"
+            android:layout_width="match_parent"
+            android:hint="Enter New Username"
+            android:gravity="center"
+            android:textColorHint="@android:color/black"
+            android:layout_height="48sp"
+            android:layout_marginTop="25sp"
+            android:background="@drawable/rounded_border">
+        </EditText>
+
+        <EditText
+            android:id="@+id/new_password"
+            android:layout_width="match_parent"
+            android:layout_height="48sp"
+            android:gravity="center"
+            android:layout_marginTop="20sp"
+            android:hint="Enter New Password"
+            android:inputType="textWebPassword"
+            android:textColorHint="@android:color/black"
+            android:background="@drawable/rounded_border">
+        </EditText>
+
+        <Button
+            android:id="@+id/save_newUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@android:color/black"
+            android:text="Register"
+            android:textAllCaps="false">
+        </Button>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
