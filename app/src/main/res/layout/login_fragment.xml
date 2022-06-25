@@ -9,6 +9,7 @@
 
 
     <LinearLayout
+        android:id="@+id/home_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -77,6 +78,7 @@
             android:weightSum="2">
 
             <Button
+                android:id="@+id/register_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -92,6 +94,13 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <include
+        android:id="@+id/registration_layout"
+        layout="@layout/user_registration"
+        android:visibility="gone">
+    </include>
+
 
 
 </RelativeLayout>
