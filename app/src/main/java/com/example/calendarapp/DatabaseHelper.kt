@@ -8,7 +8,7 @@ import androidx.annotation.ContentView
 
 
 class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname,factory, version){
-
+    
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL("create table user(id integer primary key autoincrement," +
          "name varchar(30),password varchar(20))")

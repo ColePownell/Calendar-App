@@ -44,11 +44,16 @@ class LoginPage : AppCompatActivity() {
 
         loginBtn.setOnClickListener {
 
-              //Sends User to the Main Activity Page After Login
+
             if (handler.userPresent(username.text.toString(), password.text.toString()))
                 Toast.makeText(this,"Login Success", Toast.LENGTH_SHORT).show()
             else
                 Toast.makeText(this,"Login failed Incorrect Username or Password",Toast.LENGTH_SHORT).show()
+
+            //Sends User to the Main Activity Page After Login
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
 
         }
 
