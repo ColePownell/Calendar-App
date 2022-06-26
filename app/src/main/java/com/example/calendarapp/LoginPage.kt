@@ -31,17 +31,17 @@ class LoginPage : AppCompatActivity() {
             showHomeLogin()
         }
 
+        LoginSubmitListner()
+    }
 
-
+    fun LoginSubmitListner()
+    {
         //Grab ID's from login_fragment.xml
-
         val loginBtn = findViewById<Button>(R.id.loginBtn)
         val username = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
 
-
         //Click Listener for submit button
-
         loginBtn.setOnClickListener {
 
 
@@ -56,7 +56,6 @@ class LoginPage : AppCompatActivity() {
             startActivity(intent)
 
         }
-
     }
 
     val registration_layout = findViewById<RelativeLayout>(R.id.registration_layout)
