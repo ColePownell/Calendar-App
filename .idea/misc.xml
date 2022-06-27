@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/maxim/Desktop/Calendar-App/app/src/main/res/layout/login_fragment.xml" value="0.1400709219858156" />
+        <entry key="..\:/Users/maxim/Desktop/Calendar-App/app/src/main/res/layout/main_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/maxim/Desktop/Calendar-App/app/src/main/res/layout/user_registration.xml" value="0.33" />
         <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/drawable/rounded_border.xml" value="0.1" />
         <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/drawable/rounded_button.xml" value="0.1" />
         <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/layout/Login_fragment.xml" value="0.2" />

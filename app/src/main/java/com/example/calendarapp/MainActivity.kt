@@ -5,8 +5,8 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    lateinit var dateTV: TextView
-    lateinit var calendarView: CalendarView
+    private lateinit var dateTV: TextView
+    private lateinit var calendarView: CalendarView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_fragment)
@@ -20,11 +20,11 @@ class MainActivity : AppCompatActivity() {
                     // such as year, month and day of month
                     // on below line we are creating a variable
                     // in which we are adding all the cariables in it.
-                    val Date = (dayOfMonth.toString() + "-"
+                    var date = (dayOfMonth.toString() + "-"
                             + (month + 1) + "-" + year)
 
                     // set this date in TextView for Display
-                    dateTV.setText(Date)
+                    dateTV.setText(date)
                 })
 
 

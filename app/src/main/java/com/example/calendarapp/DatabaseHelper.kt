@@ -21,7 +21,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, dbname, facto
         TODO("Not yet implemented")
     }
 
-    fun insertUserData(name: String, password: String) {
+    internal fun insertUserData(name: String, password: String) {
         val db: SQLiteDatabase = writableDatabase
         val values: ContentValues = ContentValues()
         values.put("name", name)
@@ -31,7 +31,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, dbname, facto
         db.close()
     }
 
-    fun userPresent(name: String, password: String): Boolean {
+    internal fun userPresent(name: String, password: String): Boolean {
         val db = writableDatabase
         val query = "select * from user where name = '$name' and password = '$password'"
         val cursor = db.rawQuery(query, null)
