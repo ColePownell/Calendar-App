@@ -7,11 +7,13 @@ import android.database.sqlite.SQLiteOpenHelper
 import androidx.annotation.ContentView
 
 
-class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname,factory, version){
-    
+class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, dbname, factory, version) {
+
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.execSQL("create table user(id integer primary key autoincrement," +
-         "name varchar(30),password varchar(20))")
+        db?.execSQL(
+            "create table user(id integer primary key autoincrement," +
+                    "name varchar(30),password varchar(20))"
+        )
 
     }
 
@@ -19,13 +21,13 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname,factory
         TODO("Not yet implemented")
     }
 
-    fun insertUserData(name: String, password: String){
+    fun insertUserData(name: String, password: String) {
         val db: SQLiteDatabase = writableDatabase
         val values: ContentValues = ContentValues()
-        values.put("name",name)
+        values.put("name", name)
         values.put("password", password)
 
-        db.insert("user", null,values)
+        db.insert("user", null, values)
         db.close()
     }
 
@@ -33,8 +35,8 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname,factory
         val db = writableDatabase
         val query = "select * from user where name = '$name' and password = '$password'"
         val cursor = db.rawQuery(query, null)
-        if(cursor.count <= 0){
-           cursor.close()
+        if (cursor.count <= 0) {
+            cursor.close()
             return false
         }
         cursor.close()
@@ -42,7 +44,7 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname,factory
     }
 
     companion object {
-        internal val dbname ="userDB"
+        internal val dbname = "userDB"
         internal val factory = null
         internal val version = 1
     }
