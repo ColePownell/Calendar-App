@@ -20,7 +20,7 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname,factory
 
     fun insertUserData(name: String, password: String){
         val db: SQLiteDatabase = writableDatabase
-        val values: ContentValues = ContentValues()
+        val values = ContentValues()
         values.put("name",name)
         values.put("password", password)
 
