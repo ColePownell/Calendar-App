@@ -41,9 +41,9 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname,factory
     }
 
     companion object {
-        internal val dbname ="userDB"
+        internal const val dbname ="userDB"
         internal val factory = null
-        internal val version = 1
+        internal const val version = 1
     }
 
 
