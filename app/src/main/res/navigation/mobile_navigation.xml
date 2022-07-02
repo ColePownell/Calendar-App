@@ -7,8 +7,16 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.calendarapp.ui.theme.fragmentMain"
+        android:name="com.example.calendarapp.MainActivity"
         android:label="@string/MFname"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_navigation_home_to_login"
+            app:destination="@id/login" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.calendarapp.LoginPage"
+        tools:layout="@layout/login_fragment" />
 </navigation>
