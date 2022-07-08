@@ -1,0 +1,14 @@
+[
+  {
+    "name": "testevent",
+    "time": "1-6-2022",
+    "people": ["name1", "name2"],
+    "location": "locationname"
+   },
+  {
+    "name": "testevent2",
+    "time": "testtime2",
+    "people": ["name3", "name4"],
+    "location": "locationname2"
+  }
+]
