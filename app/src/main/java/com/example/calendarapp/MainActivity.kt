@@ -1,5 +1,6 @@
 package com.example.calendarapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_fragment)
         dateTV = findViewById(R.id.idTVDate)
         calendarView = findViewById(R.id.calendarView)
+
+
 
         calendarView
             .setOnDateChangeListener(
@@ -26,6 +29,7 @@ class MainActivity : AppCompatActivity() {
                     // set this date in TextView for Display
                     dateTV.setText(Date)
                 })
+
 
 
 
