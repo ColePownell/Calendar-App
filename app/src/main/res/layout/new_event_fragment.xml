@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Event Name"
+        android:text="@string/event_name"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="153dp"
         tools:ignore="MissingConstraints" />
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="DD-MM-YYYY"
+        android:text="@string/dd_mm_yyyy"
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="247dp"
         tools:ignore="MissingConstraints" />
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Location"
+        android:text="@string/location"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="410dp"
         tools:ignore="MissingConstraints" />
@@ -50,7 +50,7 @@
         android:id="@+id/addBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add People"
+        android:text="@string/add_people"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="502dp"
         tools:ignore="MissingConstraints" />
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Time"
+        android:text="@string/time"
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="332dp"
         tools:ignore="MissingConstraints" />
@@ -70,7 +70,7 @@
         android:id="@+id/tveventdetails"
         android:layout_width="196dp"
         android:layout_height="53dp"
-        android:text="Event Details"
+        android:text="@string/event_details"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         tools:layout_editor_absoluteX="107dp"
         tools:layout_editor_absoluteY="51dp"
