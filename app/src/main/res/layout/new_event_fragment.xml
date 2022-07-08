@@ -8,7 +8,7 @@
         android:id="@+id/createBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Done"
+        android:text="@string/done"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="629dp"
         tools:ignore="MissingConstraints" />
@@ -22,7 +22,8 @@
         android:text="@string/event_name"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="153dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="LabelFor,MissingConstraints"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/tfdate"
