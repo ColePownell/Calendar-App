@@ -32,7 +32,7 @@
         android:name="com.example.calendarapp.DatabaseHelper"
         tools:layout="@layout/user_registration" >
         <action
-            android:id="@+id/action_userRegistration_to_login"
+            android:id="@+id/action_userRegistration_to_login4"
             app:destination="@id/login" />
     </fragment>
 
