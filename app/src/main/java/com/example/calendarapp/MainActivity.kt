@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_fragment)
-        var indexList: ArrayList<Int> = arrayListOf()
+        val indexList: ArrayList<Int> = arrayListOf()
         dateTV = findViewById(R.id.idTVDate)
         calendarView = findViewById(R.id.calendarView)
         login = findViewById(R.id.loginBTN)
