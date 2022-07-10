@@ -18,5 +18,23 @@
     <fragment
         android:id="@+id/login"
         android:name="com.example.calendarapp.LoginPage"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_login_to_userRegistration"
+            app:destination="@id/userRegistration" />
+        <action
+            android:id="@+id/action_login_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userRegistration"
+        android:name="com.example.calendarapp.DatabaseHelper"
+        tools:layout="@layout/user_registration" >
+        <action
+            android:id="@+id/action_userRegistration_to_login4"
+            app:destination="@id/login" />
+    </fragment>
+
+
 </navigation>
