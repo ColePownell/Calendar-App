@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
     lateinit var dateTV: TextView
     lateinit var calendarView: CalendarView
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_fragment)
         val indexList: ArrayList<Int> = arrayListOf()
@@ -19,33 +20,31 @@ class MainActivity : AppCompatActivity() {
 
         calendarView
             .setOnDateChangeListener(
-                CalendarView.OnDateChangeListener { view, year, month, dayOfMonth ->
+                CalendarView.OnDateChangeListener
+                { view, year, month, dayOfMonth ->
                     // In this Listener we are getting values
                     // such as year, month and day of month
                     // on below line we are creating a variable
-                    // in which we are adding all the cariables in it.
-                    val Date = (dayOfMonth.toString() + "-"
+                    // in which we are adding all the variables in it.
+                    val date = (dayOfMonth.toString() + "-"
                             + (month + 1) + "-" + year)
 
                     // set this date in TextView for Display
-                    dateTV.setText(Date)
-
-
-//inital setup for reading json string
+                    dateTV.text = date
+//initial setup for reading json string
             indexList.clear()
             var index = 0
             while (index >= 0)
                     {
-                    index = findindex(text, Date,index+1)
+                    index = findIndex(text, date,index+1)
                     indexList.add(index)
                     println(index)
                     }
                 })
-        }
+    }
 // finds any json events with the specified date
-    fun findindex(inputString: String, whatToFind: String, startIndex: Int = 0): Int {
-        val matchIndex = inputString.indexOf(whatToFind, startIndex)
-        return matchIndex
+    private fun findIndex(inputString: String, whatToFind: String, startIndex: Int = 0): Int {
+        return inputString.indexOf(whatToFind, startIndex) //variable was only created to be returned right after, can just return the value instead
     }
     }
 
