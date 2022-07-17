@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import java.lang.reflect.Type
 
 class LoginPage : AppCompatActivity() {
 
@@ -21,7 +20,7 @@ class LoginPage : AppCompatActivity() {
 
         showHomeLogin()
 
-        register_button.setOnClickListener{
+        registerButton.setOnClickListener{
             showRegistration()
         }
 
@@ -59,23 +58,23 @@ class LoginPage : AppCompatActivity() {
 
     }
 
-    val registration_layout = findViewById<RelativeLayout>(R.id.registration_layout)
-    val home_login = findViewById<LinearLayout>(R.id.home_login)
-    val register_button = findViewById<Button>(R.id.register_button)
-    val saveUserButton = findViewById<Button>(R.id.save_newUsername)
-    val newUsername = findViewById<EditText>(R.id.new_username)
-    val newPassword = findViewById<EditText>(R.id.new_password)
+    private val registrationLayout = findViewById<RelativeLayout>(R.id.registration_layout)
+    private val homeLogin = findViewById<LinearLayout>(R.id.home_login)
+    private val registerButton = findViewById<Button>(R.id.register_button)
+    private val saveUserButton = findViewById<Button>(R.id.save_newUsername)
+    private val newUsername = findViewById<EditText>(R.id.new_username)
+    private val newPassword = findViewById<EditText>(R.id.new_password)
 
 
     private fun showRegistration() {
 
-        registration_layout.visibility=View.VISIBLE
-        home_login.visibility=View.GONE
+        registrationLayout.visibility=View.VISIBLE
+        homeLogin.visibility=View.GONE
     }
 
     private fun showHomeLogin() {
-        home_login.visibility=View.VISIBLE
-        registration_layout.visibility=View.GONE
+        homeLogin.visibility=View.VISIBLE
+        registrationLayout.visibility=View.GONE
     }
 
 

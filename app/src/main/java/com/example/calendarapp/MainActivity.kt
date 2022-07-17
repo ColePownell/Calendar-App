@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                             + (month + 1) + "-" + year)
 
                     // set this date in TextView for Display
-                    dateTV.setText(date)
+                    dateTV.text = date
 //initial setup for reading json string
             indexList.clear()
             var index = 0
