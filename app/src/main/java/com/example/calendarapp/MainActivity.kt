@@ -5,12 +5,13 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    lateinit var dateTV: TextView
-    lateinit var calendarView: CalendarView
+    private lateinit var dateTV: TextView
+    private lateinit var calendarView: CalendarView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_fragment)
-        var indexList: ArrayList<Int> = arrayListOf()
+        val indexList: ArrayList<Int> = arrayListOf()
         dateTV = findViewById(R.id.idTVDate)
         calendarView = findViewById(R.id.calendarView)
         //create string from json file
@@ -23,33 +24,37 @@ class MainActivity : AppCompatActivity() {
                     // In this Listener we are getting values
                     // such as year, month and day of month
                     // on below line we are creating a variable
-                    // in which we are adding all the cariables in it.
+
+                    // in which we are adding all the variables in it.
+
                     val date = (dayOfMonth.toString() + "-"
                             + (month + 1) + "-" + year)
 
                     // set this date in TextView for Display
+
+
                     dateTV.text = date
 
 
 
-
-
-//inital setup for reading json string
+//initial setup for reading json string
             indexList.clear()
             var index = 0
             while (index >= 0)
                     {
-                    index = findindex(text, date,index+1)
+
+                    index = findIndex(text, date,index+1)
+
                     indexList.add(index)
                     println(index)
                     }
                 })
         }
-// finds any json events with the specified date
-    fun findindex(inputString: String, whatToFind: String, startIndex: Int = 0): Int {
-        val matchIndex = inputString.indexOf(whatToFind, startIndex)
-        return matchIndex
+
+    // finds any json events with the specified date
+    private fun findIndex(inputString: String, whatToFind: String, startIndex: Int = 0): Int {
+        return inputString.indexOf(whatToFind, startIndex)
     }
-    }
+}
 
 
