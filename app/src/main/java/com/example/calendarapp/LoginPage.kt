@@ -69,13 +69,13 @@ class LoginPage : AppCompatActivity() {
 
     private fun showRegistration() {
 
-        registration_layout.visibility=View.VISIBLE
-        home_login.visibility=View.GONE
+        registration_layout.visibility = View.VISIBLE
+        home_login.visibility = View.GONE
     }
 
     private fun showHomeLogin() {
-        home_login.visibility=View.VISIBLE
-        registration_layout.visibility=View.GONE
+        home_login.visibility = View.VISIBLE
+        registration_layout.visibility = View.GONE
     }
 
 
