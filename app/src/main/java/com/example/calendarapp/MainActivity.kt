@@ -29,15 +29,18 @@ class MainActivity : AppCompatActivity() {
                             + (month + 1) + "-" + year)
 
                     // set this date in TextView for Display
+
                     dateTV.text = date
 
 
-//inital setup for reading json string
+//initial setup for reading json string
             indexList.clear()
             var index = 0
             while (index >= 0)
                     {
+
                     index = findIndex(text, date,index+1)
+
                     indexList.add(index)
                     println(index)
                     }
