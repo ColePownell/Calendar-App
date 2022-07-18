@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             var index = 0
             while (index >= 0)
                     {
-                    index = findindex(text, Date,index+1)
+                    index = findindex(text, Date,index + 1)
                     indexList.add(index)
                     println(index)
                     }
