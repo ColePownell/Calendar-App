@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import androidx.annotation.ContentView
 
 
 class DatabaseHelper (context: Context):SQLiteOpenHelper(context, DBNAME, FACTORY, VERSION){

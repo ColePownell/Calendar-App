@@ -24,13 +24,17 @@ class MainActivity : AppCompatActivity() {
                     // In this Listener we are getting values
                     // such as year, month and day of month
                     // on below line we are creating a variable
+
                     // in which we are adding all the variables in it.
+
                     val date = (dayOfMonth.toString() + "-"
                             + (month + 1) + "-" + year)
 
                     // set this date in TextView for Display
 
+
                     dateTV.text = date
+
 
 
 //initial setup for reading json string

@@ -9,6 +9,7 @@ import java.lang.reflect.Type
 
 class LoginPage : AppCompatActivity() {
 
+
     lateinit var handler:DatabaseHelper
     private val registrationLayout = findViewById<RelativeLayout>(R.id.registration_layout)
     private val homeLogin = findViewById<LinearLayout>(R.id.home_login)
@@ -17,8 +18,9 @@ class LoginPage : AppCompatActivity() {
     private val newUsername = findViewById<EditText>(R.id.new_username)
     private val newPassword = findViewById<EditText>(R.id.new_password)
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        //Login Page for Calendar App
+        // Login Page for Calendar App
 
         //Grab ID's from login_fragment.xml
 
@@ -33,26 +35,36 @@ class LoginPage : AppCompatActivity() {
 
         showHomeLogin()
 
+
         registerButton.setOnClickListener{
+
             showRegistration()
         }
 
-        saveUserButton.setOnClickListener{
+        saveUserButton.setOnClickListener {
 
             handler.insertUserData(newUsername.text.toString(), newPassword.text.toString())
             showHomeLogin()
         }
 
+
         //Click Listener for submit button
+
 
         loginBtn.setOnClickListener {
 
             if (handler.userPresent(username.text.toString(), password.text.toString()))
-                Toast.makeText(this,"Login Success", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show()
             else
-                Toast.makeText(this,"Login failed Incorrect Username or Password",Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Login failed Incorrect Username or Password",
+                    Toast.LENGTH_SHORT
+                ).show()
+
 
             //Sends User to the Main Activity Page After Login
+
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
@@ -61,6 +73,7 @@ class LoginPage : AppCompatActivity() {
 
     private fun showRegistration() {
 
+
         registrationLayout.visibility=View.VISIBLE
         homeLogin.visibility=View.GONE
     }
@@ -68,6 +81,7 @@ class LoginPage : AppCompatActivity() {
     private fun showHomeLogin() {
         homeLogin.visibility=View.VISIBLE
         registrationLayout.visibility=View.GONE
+
     }
 
 }
