@@ -23,20 +23,20 @@ class MainActivity : AppCompatActivity() {
                     // In this Listener we are getting values
                     // such as year, month and day of month
                     // on below line we are creating a variable
-                    // in which we are adding all the cariables in it.
-                    val Date = (dayOfMonth.toString() + "-"
+                    // in which we are adding all the variables in it.
+                    val date = (dayOfMonth.toString() + "-"
                             + (month + 1) + "-" + year)
 
                     // set this date in TextView for Display
-                    dateTV.setText(Date)
+                    dateTV.setText(date)
 
 
-//inital setup for reading json string
+//initial setup for reading json string
             indexList.clear()
             var index = 0
             while (index >= 0)
                     {
-                    index = findindex(text, Date,index+1)
+                    index = findindex(text, date,index+1)
                     indexList.add(index)
                     println(index)
                     }
