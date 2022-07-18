@@ -5,8 +5,9 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    lateinit var dateTV: TextView
-    lateinit var calendarView: CalendarView
+    private lateinit var dateTV: TextView
+    private lateinit var calendarView: CalendarView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_fragment)
@@ -28,7 +29,8 @@ class MainActivity : AppCompatActivity() {
                             + (month + 1) + "-" + year)
 
                     // set this date in TextView for Display
-                    dateTV.setText(date)
+
+                    dateTV.text = date
 
 
 //initial setup for reading json string
@@ -36,17 +38,19 @@ class MainActivity : AppCompatActivity() {
             var index = 0
             while (index >= 0)
                     {
-                    index = findindex(text, date,index+1)
+
+                    index = findIndex(text, date,index+1)
+
                     indexList.add(index)
                     println(index)
                     }
                 })
         }
-// finds any json events with the specified date
-    fun findindex(inputString: String, whatToFind: String, startIndex: Int = 0): Int {
-        val matchIndex = inputString.indexOf(whatToFind, startIndex)
-        return matchIndex
+
+    // finds any json events with the specified date
+    private fun findIndex(inputString: String, whatToFind: String, startIndex: Int = 0): Int {
+        return inputString.indexOf(whatToFind, startIndex)
     }
-    }
+}
 
 
