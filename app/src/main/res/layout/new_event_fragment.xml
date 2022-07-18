@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/createBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/done"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="629dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/tfeventname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/event_name"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="153dp"
+        tools:ignore="LabelFor,MissingConstraints"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/tfdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/dd_mm_yyyy"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="247dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/tflocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/location"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="410dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/addBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_people"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="502dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/tftime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/time"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="332dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tveventdetails"
+        android:layout_width="196dp"
+        android:layout_height="53dp"
+        android:text="@string/event_details"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="51dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
