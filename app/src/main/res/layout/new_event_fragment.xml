@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,42 +10,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/done"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="629dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/tfeventname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:gravity="center"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/event_name"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="153dp"
-        tools:ignore="LabelFor,MissingConstraints"
-        android:autofillHints="" />
+        app:layout_constraintBottom_toTopOf="@+id/tfdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.725"
+        tools:ignore="LabelFor,MissingConstraints" />
 
     <EditText
         android:id="@+id/tfdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:text="@string/dd_mm_yyyy"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="247dp"
+        app:layout_constraintBottom_toTopOf="@+id/tftime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.764"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/tflocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:text="@string/location"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="410dp"
+        app:layout_constraintBottom_toTopOf="@+id/addBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -52,8 +67,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_people"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="502dp"
+        app:layout_constraintBottom_toTopOf="@+id/createBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.899"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -63,18 +81,26 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/time"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="332dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/tflocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.851"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tveventdetails"
-        android:layout_width="196dp"
-        android:layout_height="53dp"
+        android:layout_width="334dp"
+        android:layout_height="40dp"
+        android:gravity="center"
         android:text="@string/event_details"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="51dp"
+        app:layout_constraintBottom_toTopOf="@+id/tfeventname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

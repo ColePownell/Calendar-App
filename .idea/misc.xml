@@ -3,13 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/drawable/rounded_border.xml" value="0.1" />
-        <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/drawable/rounded_button.xml" value="0.1" />
-        <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/layout/Login_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/layout/layout.xml" value="0.25" />
-        <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/layout/login_fragment.xml" value="0.25" />
-        <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/layout/main_fragment.xml" value="0.33" />
-        <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/layout/user_registration.xml" value="0.25" />
+        <entry key="..\:/Users/sammg/Downloads/Calendar-App/app/src/main/res/layout/layout.xml" value="0.33" />
+        <entry key="..\:/calendarApp/app/src/main/res/drawable/rounded_border.xml" value="0.3065" />
+        <entry key="..\:/calendarApp/app/src/main/res/drawable/xmlborder.xml" value="0.3065" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/activity_main.xml" value="0.365625" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/add_people_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/already_created_event_page_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/content_main.xml" value="0.365625" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/fragment_event_desctiption.xml" value="0.35280797101449274" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/fragment_plant_desctiption.xml" value="0.27049180327868855" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/login_fragment.xml" value="0.22" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/main_fragment.xml" value="0.35280797101449274" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/nav_host_fragment.xml" value="0.3515625" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/navhostfragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/new_event_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/calendarApp/app/src/main/res/layout/user_registration.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

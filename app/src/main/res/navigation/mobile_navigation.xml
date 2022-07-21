@@ -7,12 +7,15 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.calendarapp.MainActivity"
+        android:name="com.example.calendarapp.FragmentMain"
         android:label="@string/MFname"
         tools:layout="@layout/main_fragment" >
         <action
             android:id="@+id/action_navigation_home_to_login"
             app:destination="@id/login" />
+        <action
+            android:id="@+id/action_navigation_home_to_newEventPage"
+            app:destination="@id/newEventPage" />
     </fragment>
 
     <fragment
@@ -35,6 +38,12 @@
             android:id="@+id/action_userRegistration_to_login4"
             app:destination="@id/login" />
     </fragment>
+
+    <fragment
+        android:id="@+id/newEventPage"
+        android:name="com.example.calendarapp.NewEventPage"
+        tools:layout="@layout/new_event_fragment"
+        android:label="NewEventPage" />
 
 
 </navigation>
