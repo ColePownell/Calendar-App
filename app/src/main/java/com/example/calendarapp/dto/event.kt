@@ -1,13 +1,15 @@
 package com.example.calendarapp.dto
+import kotlinx.serialization.Serializable
 //types can be changed as needed
 /**
  * * A data class Event is noun class Data Transfer Object.
  * @property name the name for every Event : String
  * @property time the time for every Event : String
- * @property people the List of people for every Event : String
+ * @property date the date of the event : String
  * @property location the frequency for every Event : String
  */
-data class Event(val name: String, val time: String, val people: List<String>, val location: String){
+@Serializable
+data class Event(val name: String, val date: String, val time: String, val location: String){
     /**
      * Contains all the methods for data class Event
      */
@@ -19,6 +21,6 @@ data class Event(val name: String, val time: String, val people: List<String>, v
      * @return: name, time, people attending and location as a string concatenated
      */
     override fun toString(): String {
-        return name.plus(" ").plus(time).plus(people).plus(location)
+        return name.plus(" ").plus(time).plus(location)
     }
 }

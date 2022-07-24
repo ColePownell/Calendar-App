@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_navigation_home_to_newEventPage"
             app:destination="@id/newEventPage" />
+        <action
+            android:id="@+id/action_navigation_home_to_eventDetailsPage"
+            app:destination="@id/eventDetailsPage" />
     </fragment>
 
     <fragment
@@ -44,6 +47,10 @@
         android:name="com.example.calendarapp.NewEventPage"
         tools:layout="@layout/new_event_fragment"
         android:label="NewEventPage" />
+    <fragment
+        android:id="@+id/eventDetailsPage"
+        android:name="com.example.calendarapp.EventDetailsPage"
+        android:label="EventDetailsPage" />
 
 
 </navigation>
