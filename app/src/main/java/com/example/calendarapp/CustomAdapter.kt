@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.calendarapp.dto.Event
 
 
-class CustomAdapter(private val mList: List<Event>, val clickListener: (Event) -> Unit) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private val mList: List<Event>, val clickListener: (Event, Int) -> Unit) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     private var mObjects : ArrayList<Event> = ArrayList<Event>()
 
@@ -32,7 +32,7 @@ class CustomAdapter(private val mList: List<Event>, val clickListener: (Event) -
 
         // sets the text to the textview from our itemHolder class
         holder.textView.text = Event.name
-        holder?.textView.setOnClickListener { clickListener(Event) }
+        holder?.textView.setOnClickListener { clickListener(Event, position) }
     }
 
     // return the number of the items in the list

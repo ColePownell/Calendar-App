@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -72,8 +73,12 @@ return inflater.inflate(R.layout.main_fragment,container,false)
                     }
                     val recyclerview = view.findViewById<RecyclerView>(R.id.recycleview)
                     recyclerview.layoutManager = LinearLayoutManager(requireContext())
-                    val adapter = CustomAdapter(dateeventlist){
-                        navController!!.navigate(R.id.action_navigation_home_to_eventDetailsPage)
+                    val adapter = CustomAdapter(dateeventlist){ event: Event, position: Int ->
+                        val bundle = bundleOf("eventdate" to dateeventlist[position].date,
+                            "eventtime" to dateeventlist[position].time,
+                            "eventlocation" to dateeventlist[position].location,
+                            "eventname" to dateeventlist[position].name)
+                        navController!!.navigate(R.id.action_navigation_home_to_eventDetailsPage, bundle)
                     }
                     recyclerview.adapter = adapter
 

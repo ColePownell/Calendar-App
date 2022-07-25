@@ -50,7 +50,12 @@
     <fragment
         android:id="@+id/eventDetailsPage"
         android:name="com.example.calendarapp.EventDetailsPage"
-        android:label="EventDetailsPage" />
+        android:label="EventDetailsPage">
+        <argument android:name="eventname" android:defaultValue="None"/>
+        <argument android:name="eventdate" android:defaultValue="None"/>
+        <argument android:name="eventtime" android:defaultValue="None"/>
+        <argument android:name="eventlocation" android:defaultValue="None"/>
+    </fragment>
 
 
 </navigation>
