@@ -16,6 +16,7 @@ private var eventname: String? = null
     private var eventlocation: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //set text fields to arguments
         eventname = requireArguments().getString("eventname")
         eventtime = requireArguments().getString("eventtime")
         eventdate = requireArguments().getString("eventdate")

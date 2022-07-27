@@ -1,7 +1,6 @@
 package com.example.calendarapp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,15 +11,12 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.calendarapp.dto.Event
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.Json
 import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import java.io.*
 
 
 /**
@@ -45,10 +41,44 @@ return inflater.inflate(R.layout.main_fragment,container,false)
         navController = Navigation.findNavController(view)
 
         var indexList: ArrayList<Int> = arrayListOf()
-        //create string from json file
-        val text = resources.openRawResource(R.raw.event)
-            .bufferedReader().use { it.readText() }
-//        println(text)
+        //sample data on first launch
+        val inputStream = context?.assets?.open("event.json")
+        val inittext = inputStream?.bufferedReader().use { it!!.readText() }
+        var text = ""
+        val file = File(requireContext().filesDir, "event.json")
+        if(file.exists()) {
+            //gets data from an existing json file
+            val fileReader = FileReader(file)
+            val bufferedReader = BufferedReader(fileReader)
+            val stringBuilder = StringBuilder()
+            var line = bufferedReader.readLine()
+            while (line != null) {
+                stringBuilder.append(line).append("\n")
+                line = bufferedReader.readLine()
+            }
+            bufferedReader.close()
+            text = "$stringBuilder"
+        }else
+        {
+            //creates an event json file on first open and puts in sample events
+            val fileWriter = FileWriter(file)
+            val bufferedWriter = BufferedWriter(fileWriter)
+            bufferedWriter.write(inittext)
+            bufferedWriter.close()
+
+            val fileReader = FileReader(file)
+            val bufferedReader = BufferedReader(fileReader)
+            val stringBuilder = StringBuilder()
+            var line = bufferedReader.readLine()
+            while (line != null) {
+                stringBuilder.append(line).append("\n")
+                line = bufferedReader.readLine()
+            }
+            bufferedReader.close()
+            text = "$stringBuilder"
+        }
+
+        // create list of events from json string
         val EventList = Json.decodeFromString<List<Event>>(text)
 
         view.findViewById<Button>(R.id.loginBTN).setOnClickListener(this)
@@ -56,10 +86,7 @@ return inflater.inflate(R.layout.main_fragment,container,false)
         view.findViewById<CalendarView>(R.id.calendarView)
             .setOnDateChangeListener(
                 CalendarView.OnDateChangeListener { view2, year, month, dayOfMonth ->
-                    // In this Listener we are getting values
-                    // such as year, month and day of month
-                    // on below line we are creating a variable
-                    // in which we are adding all the cariables in it.
+// set clicklistenr for the change date, changes recycleview and textview for date
                     val date = (dayOfMonth.toString() + "-"
                             + (month + 1) + "-" + year)
                     val dateeventlist = ArrayList<Event>()
@@ -73,6 +100,7 @@ return inflater.inflate(R.layout.main_fragment,container,false)
                     }
                     val recyclerview = view.findViewById<RecyclerView>(R.id.recycleview)
                     recyclerview.layoutManager = LinearLayoutManager(requireContext())
+                    //navigates and sends arguments to event details
                     val adapter = CustomAdapter(dateeventlist){ event: Event, position: Int ->
                         val bundle = bundleOf("eventdate" to dateeventlist[position].date,
                             "eventtime" to dateeventlist[position].time,
@@ -87,26 +115,6 @@ return inflater.inflate(R.layout.main_fragment,container,false)
                 })
 
 
-        // getting the recyclerview by its id
-//        val recyclerview = view.findViewById<RecyclerView>(R.id.recycleview)
-//
-//        // this creates a vertical layout Manager
-//        recyclerview.layoutManager = LinearLayoutManager(requireContext())
-//
-//        // ArrayList of class ItemsViewModel
-//        val data = ArrayList<Event>()
-//
-//        // This loop will create 20 Views containing
-//        // the image with the count of view
-//        for (i in 1..20) {
-//            data.add(Event("testname", "test date", "testtime", "testdate"))
-//        }
-//
-//        // This will pass the ArrayList to our Adapter
-//        val adapter = CustomAdapter(data)
-//
-//        // Setting the Adapter with the recyclerview
-//        recyclerview.adapter = adapter
     }
 
 
