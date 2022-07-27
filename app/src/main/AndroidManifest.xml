@@ -26,7 +26,8 @@
         </activity>
         <activity
             android:name=".LoginPage"
-            android:label="Login Page">
+            android:label="Login Page"
+            tools:ignore="Instantiatable">
         </activity>
     </application>
 
