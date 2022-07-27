@@ -65,7 +65,7 @@ return inflater.inflate(R.layout.main_fragment,container,false)
             val bufferedWriter = BufferedWriter(fileWriter)
             bufferedWriter.write(inittext)
             bufferedWriter.close()
-
+            //now grabs data from created file
             val fileReader = FileReader(file)
             val bufferedReader = BufferedReader(fileReader)
             val stringBuilder = StringBuilder()
