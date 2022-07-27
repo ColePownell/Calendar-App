@@ -27,10 +27,10 @@ class CustomAdapter(private val mList: List<Event>, val clickListener: (Event, I
 
         val Event = mList[position]
 
-        // sets the image to the imageview from our itemHolder class
+        // sets the image to the imageview if needed
 //        holder.imageView.setImageResource(R.drawable.ic_baseline_folder_24)
 
-        // sets the text to the textview from our itemHolder class
+        // sets the text to the textview from our Event class
         holder.textView.text = Event.name
         holder?.textView.setOnClickListener { clickListener(Event, position) }
     }
