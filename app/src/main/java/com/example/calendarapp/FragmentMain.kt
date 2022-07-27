@@ -1,17 +1,26 @@
 package com.example.calendarapp
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.calendarapp.dto.Event
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
 
 
 /**
@@ -39,6 +48,9 @@ return inflater.inflate(R.layout.main_fragment,container,false)
         //create string from json file
         val text = resources.openRawResource(R.raw.event)
             .bufferedReader().use { it.readText() }
+//        println(text)
+        val EventList = Json.decodeFromString<List<Event>>(text)
+
         view.findViewById<Button>(R.id.loginBTN).setOnClickListener(this)
         view.findViewById<Button>(R.id.addEventBTN).setOnClickListener(this)
         view.findViewById<CalendarView>(R.id.calendarView)
@@ -50,28 +62,56 @@ return inflater.inflate(R.layout.main_fragment,container,false)
                     // in which we are adding all the cariables in it.
                     val date = (dayOfMonth.toString() + "-"
                             + (month + 1) + "-" + year)
-
+                    val dateeventlist = ArrayList<Event>()
                     // set this date in TextView for Display
                     view.findViewById<TextView>(R.id.idTVDate).text = date
-
-//inital setup for reading json string
-                    indexList.clear()
-                    var index = 0
-                    while (index >= 0)
+                    for(Event in EventList)
                     {
-                        index = findindex(text, date,index+1)
-                        indexList.add(index)
-                        println(index)
+                        if(Event.date.contains(date))
+                        { dateeventlist.add(Event)
+                        }
                     }
+                    val recyclerview = view.findViewById<RecyclerView>(R.id.recycleview)
+                    recyclerview.layoutManager = LinearLayoutManager(requireContext())
+                    val adapter = CustomAdapter(dateeventlist){ event: Event, position: Int ->
+                        val bundle = bundleOf("eventdate" to dateeventlist[position].date,
+                            "eventtime" to dateeventlist[position].time,
+                            "eventlocation" to dateeventlist[position].location,
+                            "eventname" to dateeventlist[position].name)
+                        navController!!.navigate(R.id.action_navigation_home_to_eventDetailsPage, bundle)
+                    }
+                    recyclerview.adapter = adapter
+
+
+
                 })
+
+
+        // getting the recyclerview by its id
+//        val recyclerview = view.findViewById<RecyclerView>(R.id.recycleview)
+//
+//        // this creates a vertical layout Manager
+//        recyclerview.layoutManager = LinearLayoutManager(requireContext())
+//
+//        // ArrayList of class ItemsViewModel
+//        val data = ArrayList<Event>()
+//
+//        // This loop will create 20 Views containing
+//        // the image with the count of view
+//        for (i in 1..20) {
+//            data.add(Event("testname", "test date", "testtime", "testdate"))
+//        }
+//
+//        // This will pass the ArrayList to our Adapter
+//        val adapter = CustomAdapter(data)
+//
+//        // Setting the Adapter with the recyclerview
+//        recyclerview.adapter = adapter
     }
 
 
 
-    fun findindex(inputString: String, whatToFind: String, startIndex: Int = 0): Int {
-        val matchIndex = inputString.indexOf(whatToFind, startIndex)
-        return matchIndex
-    }
+
     override fun onClick(v: View?) {
         when(v!!.id) {
             R.id.loginBTN -> navController!!.navigate(R.id.action_navigation_home_to_login)

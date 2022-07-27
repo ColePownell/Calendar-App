@@ -1,14 +1,4 @@
 [
-  {
-    "name": "testevent",
-    "time": "1-6-2022",
-    "people": ["name1", "name2"],
-    "location": "locationname"
-   },
-  {
-    "name": "testevent2",
-    "time": "testtime2",
-    "people": ["name3", "name4"],
-    "location": "locationname2"
-  }
+  {"name": "testevent", "date": "1-7-2022", "time": "1:00", "location": "locationname"},
+  {"name": "testevent2", "date": "2-7-2022", "time": "2:00", "location": "locationname2"}
 ]
