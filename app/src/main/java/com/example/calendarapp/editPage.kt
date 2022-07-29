@@ -32,7 +32,7 @@ class EditPage : Fragment(), View.OnClickListener{
         eventlocation = requireArguments().getString("eventlocation")
     }
 
-
+//
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
