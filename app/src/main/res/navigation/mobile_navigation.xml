@@ -62,7 +62,11 @@
     <fragment
         android:id="@+id/editPage"
         android:name="com.example.calendarapp.editPage"
-        android:label="editPage" />
-
+        android:label="editPage">
+        <argument android:name="eventname" android:defaultValue="None"/>
+        <argument android:name="eventdate" android:defaultValue="None"/>
+        <argument android:name="eventtime" android:defaultValue="None"/>
+        <argument android:name="eventlocation" android:defaultValue="None"/>
+    </fragment>
 
 </navigation>
