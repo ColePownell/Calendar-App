@@ -26,49 +26,6 @@ class LoginPage : Fragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         // Login Page for Calendar App
         super.onCreate(savedInstanceState)
-        //Grab ID's from login_fragment.xml
-//
-//        val loginBtn = findViewById<Button>(R.id.loginBtn)
-//        val username = findViewById<EditText>(R.id.username)
-//        val password = findViewById<EditText>(R.id.password)
-//
-//
-//
-//
-//        handler = DatabaseHelper(this)
-//
-//        showHomeLogin()
-//
-//
-//        registerButton.setOnClickListener{
-//
-//            showRegistration()
-//        }
-//
-//        saveUserButton.setOnClickListener {
-//
-//            handler.insertUserData(newUsername.text.toString(), newPassword.text.toString())
-//            showHomeLogin()
-//        }
-//
-//
-//        //Click Listener for submit button
-//
-//
-//        loginBtn.setOnClickListener {
-//
-//            if (handler.userPresent(username.text.toString(), password.text.toString()))
-//                Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show()
-//            else
-//                Toast.makeText(
-//                    this,
-//                    "Login failed Incorrect Username or Password",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//
-//
-//
-//        }
     }
 
     override fun onCreateView(

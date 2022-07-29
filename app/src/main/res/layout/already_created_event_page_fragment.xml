@@ -6,51 +6,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="196dp"
+    <Button
+        android:id="@+id/deleteBTN"
+        android:layout_width="137dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="108dp"
-        android:text="@string/event_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:text="Delete Event"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="83dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBTN"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:layout_width="129dp"
-        android:layout_height="49dp"
-        android:layout_marginEnd="172dp"
-        android:text="@string/time"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="248dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="234dp"
+        android:layout_height="46dp"
         android:ems="10"
-        android:text="@string/location"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="423dp" />
-
-    <ListView
-        android:layout_width="298dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
-        android:text="@string/username"
+        android:inputType="textPersonName"
+        android:text="Date"
+        app:layout_constraintBottom_toTopOf="@+id/etTime"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="587dp" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <EditText
+        android:id="@+id/etTime"
+        android:layout_width="234dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Time"
+        app:layout_constraintBottom_toTopOf="@+id/etLocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.747" />
+
+    <EditText
+        android:id="@+id/etLocation"
+        android:layout_width="234dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.811" />
 
     <Button
+        android:id="@+id/editBTN"
         android:layout_width="137dp"
         android:layout_height="53dp"
         android:text="@string/edit_event"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="606dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.241"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="234dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/etDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
