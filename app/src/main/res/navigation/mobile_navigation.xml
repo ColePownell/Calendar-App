@@ -55,7 +55,14 @@
         <argument android:name="eventdate" android:defaultValue="None"/>
         <argument android:name="eventtime" android:defaultValue="None"/>
         <argument android:name="eventlocation" android:defaultValue="None"/>
+        <action
+            android:id="@+id/action_eventDetailsPage_to_editPage"
+            app:destination="@id/editPage" />
     </fragment>
+    <fragment
+        android:id="@+id/editPage"
+        android:name="com.example.calendarapp.editPage"
+        android:label="editPage" />
 
 
 </navigation>
