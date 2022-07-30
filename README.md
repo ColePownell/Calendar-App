@@ -159,9 +159,9 @@ IEventDAO: interface for room to persist event data
 ## Scrum Roles 
 Dev/Ops - Cole Pownell
 
-Front End Developer - Sam Gehrlich
+Front End Developer - Anish Selar
 
-Integration Developer - Anish Selar
+Integration Developer - Sam Gehrlich
 
 ## Weekly Meeting 
 
