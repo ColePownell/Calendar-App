@@ -19,6 +19,8 @@ class EditPage : Fragment(), View.OnClickListener{
     private var eventdate: String? = null
     private var eventlocation: String? = null
     var navController: NavController? = null
+    var tempeventname = ""
+    var tempeventdate =""
     val json = JSONObject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,42 +49,44 @@ class EditPage : Fragment(), View.OnClickListener{
         view.findViewById<TextView>(R.id.etTime).text = eventtime
         view.findViewById<TextView>(R.id.etDate).text = eventdate
         view.findViewById<TextView>(R.id.etLocation).text = eventlocation
+        tempeventdate = view.findViewById<TextView>(R.id.etDate).text.toString()
+        tempeventname = view.findViewById<TextView>(R.id.etName).text.toString()
 
         view.findViewById<Button>(R.id.deleteBTN).setOnClickListener{
-        try {
-            val file = File(requireContext().filesDir, "event.json")
-            var flag = 0
-            val fileReader = FileReader(file)
-            val bufferedReader = BufferedReader(fileReader)
-            val stringBuilder = StringBuilder()
-            var line = bufferedReader.readLine()
-            while (line != null) {
-                if(line.contains(view.findViewById<TextView>(R.id.etName).text) && line.contains(view.findViewById<TextView>(R.id.etDate).text))
-                {
-                    line = bufferedReader.readLine()
+            try {
+                val file = File(requireContext().filesDir, "event.json")
+                var flag = 0
+                val fileReader = FileReader(file)
+                val bufferedReader = BufferedReader(fileReader)
+                val stringBuilder = StringBuilder()
+                var line = bufferedReader.readLine()
+                while (line != null) {
+                    if(line.contains(tempeventname) && line.contains(tempeventdate))
+                    {
+                        line = bufferedReader.readLine()
+                    }
+                    else {
+                        stringBuilder.append(line).append("\n")
+                        line = bufferedReader.readLine()
+                        flag++
+                    }
                 }
-                else {
-                    stringBuilder.append(line).append("\n")
-                    line = bufferedReader.readLine()
-                    flag++
-                }
+                bufferedReader.close()
+
+
+                val fileWriter = FileWriter(file)
+                val bufferedWriter = BufferedWriter(fileWriter)
+                bufferedWriter.write(stringBuilder.toString())
+                bufferedWriter.close()
+
+
+
+
+    //                    PrintWriter(FileWriter(path, true))
+    //                        .use { it.write(json.toString()) }
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-            bufferedReader.close()
-
-
-            val fileWriter = FileWriter(file)
-            val bufferedWriter = BufferedWriter(fileWriter)
-            bufferedWriter.write(stringBuilder.toString())
-            bufferedWriter.close()
-
-
-
-
-//                    PrintWriter(FileWriter(path, true))
-//                        .use { it.write(json.toString()) }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
         navController!!.navigate(R.id.action_editPage_to_navigation_home)}
 
         view.findViewById<Button>(R.id.editBTN).setOnClickListener{
@@ -102,7 +106,7 @@ class EditPage : Fragment(), View.OnClickListener{
                 val stringBuilder = StringBuilder()
                 var line = bufferedReader.readLine()
                 while (line != null) {
-                    if(line.contains(view.findViewById<TextView>(R.id.etName).text) && line.contains(view.findViewById<TextView>(R.id.etDate).text))
+                    if(line.contains(tempeventname) && line.contains(tempeventdate))
                     {
                         stringBuilder.append(json.toString()+",").append("\n")
                         line = bufferedReader.readLine()
