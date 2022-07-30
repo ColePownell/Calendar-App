@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -48,14 +47,8 @@ class EditPage : Fragment(), View.OnClickListener{
         view.findViewById<TextView>(R.id.etTime).text = eventtime
         view.findViewById<TextView>(R.id.etDate).text = eventdate
         view.findViewById<TextView>(R.id.etLocation).text = eventlocation
-        try {
-            json.put("name", view.findViewById<TextView>(R.id.tfeventname).text)
-            json.put("date", view.findViewById<TextView>(R.id.tfdate).text)
-            json.put("time", view.findViewById<TextView>(R.id.tftime).text)
-            json.put("location", view.findViewById<TextView>(R.id.tflocation).text)
-        } catch (e: JSONException) {
-            println("path fail")
-        }
+
+        view.findViewById<Button>(R.id.deleteBTN).setOnClickListener{
         try {
             val file = File(requireContext().filesDir, "event.json")
             var flag = 0
@@ -66,6 +59,7 @@ class EditPage : Fragment(), View.OnClickListener{
             while (line != null) {
                 if(line.contains(view.findViewById<TextView>(R.id.etName).text) && line.contains(view.findViewById<TextView>(R.id.etDate).text))
                 {
+                    line = bufferedReader.readLine()
                 }
                 else {
                     stringBuilder.append(line).append("\n")
@@ -89,8 +83,55 @@ class EditPage : Fragment(), View.OnClickListener{
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        navController!!.navigate(R.id.action_editPage_to_navigation_home)
-        view.findViewById<Button>(R.id.deleteBTN).setOnClickListener(this)}
+        navController!!.navigate(R.id.action_editPage_to_navigation_home)}
+
+        view.findViewById<Button>(R.id.editBTN).setOnClickListener{
+            try {
+                json.put("name", view.findViewById<TextView>(R.id.tfeventname).text)
+                json.put("date", view.findViewById<TextView>(R.id.tfdate).text)
+                json.put("time", view.findViewById<TextView>(R.id.tftime).text)
+                json.put("location", view.findViewById<TextView>(R.id.tflocation).text)
+            } catch (e: JSONException) {
+                println("path fail")
+            }
+            try {
+                val file = File(requireContext().filesDir, "event.json")
+                var flag = 0
+                val fileReader = FileReader(file)
+                val bufferedReader = BufferedReader(fileReader)
+                val stringBuilder = StringBuilder()
+                var line = bufferedReader.readLine()
+                while (line != null) {
+                    if(line.contains(view.findViewById<TextView>(R.id.etName).text) && line.contains(view.findViewById<TextView>(R.id.etDate).text))
+                    {
+                        stringBuilder.append(json.toString()+",").append("\n")
+                        line = bufferedReader.readLine()
+                        flag++
+                    }
+                    else {
+                        stringBuilder.append(line).append("\n")
+                        line = bufferedReader.readLine()
+                        flag++
+                    }
+                }
+                bufferedReader.close()
+
+
+                val fileWriter = FileWriter(file)
+                val bufferedWriter = BufferedWriter(fileWriter)
+                bufferedWriter.write(stringBuilder.toString())
+                bufferedWriter.close()
+
+
+
+
+//                    PrintWriter(FileWriter(path, true))
+//                        .use { it.write(json.toString()) }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+            navController!!.navigate(R.id.action_editPage_to_navigation_home)
+        }
 
     }
 
