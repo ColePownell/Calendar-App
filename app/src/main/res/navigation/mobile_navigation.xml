@@ -46,7 +46,11 @@
         android:id="@+id/newEventPage"
         android:name="com.example.calendarapp.NewEventPage"
         tools:layout="@layout/new_event_fragment"
-        android:label="NewEventPage" />
+        android:label="NewEventPage" >
+        <action
+            android:id="@+id/action_newEventPage_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
     <fragment
         android:id="@+id/eventDetailsPage"
         android:name="com.example.calendarapp.EventDetailsPage"

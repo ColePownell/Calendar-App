@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
@@ -18,7 +20,7 @@ val path = File("event.json")
 //    resources.openRawResource(R.raw.event)
 //    lateinit var dateTV: TextView
 
-
+    var navController: NavController? = null
     val json = JSONObject()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,7 @@ val path = File("event.json")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
         view.findViewById<TextView>(R.id.createBTN).setOnClickListener()
         {
             if (view.findViewById<TextView>(R.id.tfdate).text.isNotEmpty() ||
@@ -69,17 +72,13 @@ val path = File("event.json")
                     }
                     bufferedReader.close()
 
-
                     val fileWriter = FileWriter(file)
                     val bufferedWriter = BufferedWriter(fileWriter)
                     bufferedWriter.write(stringBuilder.toString())
                     bufferedWriter.close()
 
+                    navController!!.navigate(R.id.action_newEventPage_to_navigation_home)
 
-
-
-//                    PrintWriter(FileWriter(path, true))
-//                        .use { it.write(json.toString()) }
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
