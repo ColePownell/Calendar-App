@@ -41,12 +41,14 @@ val path = File("event.json")
         navController = Navigation.findNavController(view)
         view.findViewById<TextView>(R.id.createBTN).setOnClickListener()
         {
+            //checking if the text fields are empty
             if (view.findViewById<TextView>(R.id.tfdate).text.isNotEmpty() ||
                 view.findViewById<TextView>(R.id.tftime).text.isNotEmpty() ||
                 view.findViewById<TextView>(R.id.tflocation).text.isNotEmpty() ||
                 view.findViewById<TextView>(R.id.tfeventname).text.isNotEmpty()
             ) {
                 try {
+                    //puts event data to json object
                     json.put("name", view.findViewById<TextView>(R.id.tfeventname).text)
                     json.put("date", view.findViewById<TextView>(R.id.tfdate).text)
                     json.put("time", view.findViewById<TextView>(R.id.tftime).text)
@@ -64,6 +66,7 @@ val path = File("event.json")
                     while (line != null) {
                         if(flag ==1)
                         {
+                            //adds event to file on the second line
                             stringBuilder.append(json.toString()+",").append("\n")
                         }
                         stringBuilder.append(line).append("\n")

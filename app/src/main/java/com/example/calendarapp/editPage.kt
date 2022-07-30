@@ -63,6 +63,7 @@ class editPage : Fragment(), View.OnClickListener{
                 while (line != null) {
                     if(line.contains(tempeventname) && line.contains(tempeventdate))
                     {
+                        //skips line
                         line = bufferedReader.readLine()
                     }
                     else {
@@ -79,11 +80,6 @@ class editPage : Fragment(), View.OnClickListener{
                 bufferedWriter.write(stringBuilder.toString())
                 bufferedWriter.close()
 
-
-
-
-    //                    PrintWriter(FileWriter(path, true))
-    //                        .use { it.write(json.toString()) }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -108,6 +104,7 @@ class editPage : Fragment(), View.OnClickListener{
                 while (line != null) {
                     if(line.contains(tempeventname) && line.contains(tempeventdate))
                     {
+                        //replaces edited event
                         stringBuilder.append(json.toString()+",").append("\n")
                         line = bufferedReader.readLine()
                         flag++
@@ -126,11 +123,6 @@ class editPage : Fragment(), View.OnClickListener{
                 bufferedWriter.write(stringBuilder.toString())
                 bufferedWriter.close()
 
-
-
-
-//                    PrintWriter(FileWriter(path, true))
-//                        .use { it.write(json.toString()) }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
