@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import java.lang.reflect.Type
 
@@ -22,7 +23,7 @@ class LoginPage : Fragment(), View.OnClickListener {
 //    private val saveUserButton = findViewById<Button>(R.id.save_newUsername)
 //    private val newUsername = findViewById<EditText>(R.id.new_username)
 //    private val newPassword = findViewById<EditText>(R.id.new_password)
-
+var navController: NavController? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         // Login Page for Calendar App
         super.onCreate(savedInstanceState)
@@ -38,6 +39,7 @@ class LoginPage : Fragment(), View.OnClickListener {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
         val registrationLayout = view.findViewById<RelativeLayout>(R.id.registration_layout)
         val homeLogin = view.findViewById<LinearLayout>(R.id.home_login)
         val registerButton = view.findViewById<Button>(R.id.register_button)
@@ -74,7 +76,10 @@ class LoginPage : Fragment(), View.OnClickListener {
         view.findViewById<Button>(R.id.loginBtn).setOnClickListener {
 
             if (handler.userPresent(username.text.toString(), password.text.toString()))
+            {
                 Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
+                navController!!.navigate(R.id.action_login_to_navigation_home)
+            }
             else
                 Toast.makeText(
                     requireContext(),
