@@ -50,8 +50,11 @@ private var eventname: String? = null
         when(v!!.id)
         {
             R.id.sendEditBTN -> {
-
-                navController!!.navigate(R.id.action_eventDetailsPage_to_editPage)
+                val bundle = bundleOf("eventdate" to eventdate,
+                    "eventtime" to eventtime,
+                    "eventlocation" to eventlocation,
+                    "eventname" to eventname)
+                navController!!.navigate(R.id.action_eventDetailsPage_to_editPage, bundle)
             }
 
         }
