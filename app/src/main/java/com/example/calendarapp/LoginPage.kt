@@ -1,8 +1,6 @@
 package com.example.calendarapp
 
-import android.app.Activity
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +9,7 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import java.lang.reflect.Type
+
 
 class LoginPage : Fragment(), View.OnClickListener {
 
@@ -24,10 +22,6 @@ class LoginPage : Fragment(), View.OnClickListener {
 //    private val newUsername = findViewById<EditText>(R.id.new_username)
 //    private val newPassword = findViewById<EditText>(R.id.new_password)
 var navController: NavController? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        // Login Page for Calendar App
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,13 +34,10 @@ var navController: NavController? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        val registrationLayout = view.findViewById<RelativeLayout>(R.id.registration_layout)
-        val homeLogin = view.findViewById<LinearLayout>(R.id.home_login)
         val registerButton = view.findViewById<Button>(R.id.register_button)
         val saveUserButton = view.findViewById<Button>(R.id.save_newUsername)
         val newUsername = view.findViewById<EditText>(R.id.new_username)
         val newPassword = view.findViewById<EditText>(R.id.new_password)
-        val loginBtn =  view.findViewById<Button>(R.id.loginBTN)
         val username =  view.findViewById<EditText>(R.id.username)
         val password =  view.findViewById<EditText>(R.id.password)
 
@@ -109,9 +100,7 @@ var navController: NavController? = null
 
     }
     override fun onClick(v: View?) {
-        when(v!!.id) {
 
-        }
         }
 }
 

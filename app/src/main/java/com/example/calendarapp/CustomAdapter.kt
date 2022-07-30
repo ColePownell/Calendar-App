@@ -11,7 +11,6 @@ import com.example.calendarapp.dto.Event
 
 class CustomAdapter(private val mList: List<Event>, val clickListener: (Event, Int) -> Unit) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
-    private var mObjects : ArrayList<Event> = ArrayList<Event>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view
@@ -25,14 +24,14 @@ class CustomAdapter(private val mList: List<Event>, val clickListener: (Event, I
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val Event = mList[position]
+        val event = mList[position]
 
         // sets the image to the imageview if needed
 //        holder.imageView.setImageResource(R.drawable.ic_baseline_folder_24)
 
         // sets the text to the textview from our Event class
-        holder.textView.text = Event.name
-        holder?.textView.setOnClickListener { clickListener(Event, position) }
+        holder.textView.text = event.name
+        holder.textView.setOnClickListener { clickListener(event, position) }
     }
 
     // return the number of the items in the list

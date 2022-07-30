@@ -24,8 +24,7 @@ import java.io.*
  */
 class FragmentMain : Fragment(), View.OnClickListener{
 
-    lateinit var dateTV: TextView
-    lateinit var calendarView: CalendarView
+
 
     var navController: NavController? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +39,6 @@ return inflater.inflate(R.layout.main_fragment,container,false)
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
 
-        var indexList: ArrayList<Int> = arrayListOf()
         //sample data on first launch
         val inputStream = context?.assets?.open("event.json")
         val inittext = inputStream?.bufferedReader().use { it!!.readText() }
@@ -86,7 +84,7 @@ return inflater.inflate(R.layout.main_fragment,container,false)
         view.findViewById<CalendarView>(R.id.calendarView)
             .setOnDateChangeListener(
                 CalendarView.OnDateChangeListener { view2, year, month, dayOfMonth ->
-// set clicklistenr for the change date, changes recycleview and textview for date
+// set clicklistener for the change date, changes recycleview and textview for date
                     val date = (dayOfMonth.toString() + "-"
                             + (month + 1) + "-" + year)
                     val dateeventlist = ArrayList<Event>()
