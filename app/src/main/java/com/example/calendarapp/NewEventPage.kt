@@ -42,9 +42,9 @@ val path = File("event.json")
         view.findViewById<TextView>(R.id.createBTN).setOnClickListener()
         {
             //checking if the text fields are empty
-            if (view.findViewById<TextView>(R.id.tfdate).text.isNotEmpty() ||
-                view.findViewById<TextView>(R.id.tftime).text.isNotEmpty() ||
-                view.findViewById<TextView>(R.id.tflocation).text.isNotEmpty() ||
+            if (view.findViewById<TextView>(R.id.tfdate).text.isNotEmpty() &&
+                view.findViewById<TextView>(R.id.tftime).text.isNotEmpty() &&
+                view.findViewById<TextView>(R.id.tflocation).text.isNotEmpty() &&
                 view.findViewById<TextView>(R.id.tfeventname).text.isNotEmpty()
             ) {
                 try {

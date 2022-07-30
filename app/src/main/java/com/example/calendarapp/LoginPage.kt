@@ -15,12 +15,6 @@ class LoginPage : Fragment(), View.OnClickListener {
 
 
     lateinit var handler:DatabaseHelper
-//    private val registrationLayout = findViewById<RelativeLayout>(R.id.registration_layout)
-//    private val homeLogin = findViewById<LinearLayout>(R.id.home_login)
-//    private val registerButton = findViewById<Button>(R.id.register_button)
-//    private val saveUserButton = findViewById<Button>(R.id.save_newUsername)
-//    private val newUsername = findViewById<EditText>(R.id.new_username)
-//    private val newPassword = findViewById<EditText>(R.id.new_password)
 var navController: NavController? = null
 
     override fun onCreateView(
@@ -42,8 +36,6 @@ var navController: NavController? = null
         val password =  view.findViewById<EditText>(R.id.password)
 
 
-
-
         handler = DatabaseHelper(requireContext())
 
         showHomeLogin(view)
@@ -59,11 +51,7 @@ var navController: NavController? = null
             handler.insertUserData(newUsername.text.toString(), newPassword.text.toString())
             showHomeLogin(view)
         }
-
-
         //Click Listener for submit button
-
-
         view.findViewById<Button>(R.id.loginBtn).setOnClickListener {
 
             if (handler.userPresent(username.text.toString(), password.text.toString()))
