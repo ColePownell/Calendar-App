@@ -118,8 +118,6 @@ return inflater.inflate(R.layout.main_fragment,container,false)
     }
 
 
-
-
     override fun onClick(v: View?) {
         when(v!!.id) {
             R.id.loginBTN -> navController!!.navigate(R.id.action_navigation_home_to_login)

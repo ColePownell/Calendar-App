@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.example.calendarapp.dto.Event
 
 
 class EventDetailsPage : Fragment(), View.OnClickListener{
@@ -50,6 +50,7 @@ private var eventname: String? = null
         when(v!!.id)
         {
             R.id.sendEditBTN -> {
+
                 navController!!.navigate(R.id.action_eventDetailsPage_to_editPage)
             }
 
