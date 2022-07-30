@@ -13,7 +13,7 @@ import androidx.navigation.Navigation
 
 
 class EventDetailsPage : Fragment(), View.OnClickListener{
-private var eventname: String? = null
+    private var eventname: String? = null
     private var eventtime: String? = null
     private var eventdate: String? = null
     private var eventlocation: String? = null

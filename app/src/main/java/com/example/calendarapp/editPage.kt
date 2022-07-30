@@ -11,12 +11,19 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 
 class editPage : Fragment(), View.OnClickListener{
+    private var eventname: String? = null
+    private var eventtime: String? = null
+    private var eventdate: String? = null
+    private var eventlocation: String? = null
     var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
+        //set text fields to arguments
+        eventname = requireArguments().getString("eventname")
+        eventtime = requireArguments().getString("eventtime")
+        eventdate = requireArguments().getString("eventdate")
+        eventlocation = requireArguments().getString("eventlocation")
     }
 
 
@@ -32,11 +39,14 @@ class editPage : Fragment(), View.OnClickListener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+        view.findViewById<TextView>(R.id.etName).text = eventname
+        view.findViewById<TextView>(R.id.etTime).text = eventtime
+        view.findViewById<TextView>(R.id.etDate).text = eventdate
+        view.findViewById<TextView>(R.id.etLocation).text = eventlocation
+        view.findViewById<Button>(R.id.deleteBTN).setOnClickListener(this)
+        view.findViewById<Button>(R.id.editBTN).setOnClickListener(this)
     }
-
-
-
-
+    
     override fun onClick(v: View?) {
         when(v!!.id)
         {
