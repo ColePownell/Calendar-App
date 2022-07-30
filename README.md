@@ -150,7 +150,7 @@ createEventActivity: where you create an event and set all of the nessesary data
 
 Event: noun that represents an Event
 
-mainVeiwModel: to manage data for the mainActivity 
+mainViewModel: to manage data for the mainActivity 
 
 createEventViewModel: to manage data for the createEventActivity 
 
