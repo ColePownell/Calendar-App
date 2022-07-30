@@ -13,7 +13,7 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
 
-class EditPage : Fragment(), View.OnClickListener{
+class editPage : Fragment(), View.OnClickListener{
     private var eventname: String? = null
     private var eventtime: String? = null
     private var eventdate: String? = null
@@ -91,10 +91,10 @@ class EditPage : Fragment(), View.OnClickListener{
 
         view.findViewById<Button>(R.id.editBTN).setOnClickListener{
             try {
-                json.put("name", view.findViewById<TextView>(R.id.tfeventname).text)
-                json.put("date", view.findViewById<TextView>(R.id.tfdate).text)
-                json.put("time", view.findViewById<TextView>(R.id.tftime).text)
-                json.put("location", view.findViewById<TextView>(R.id.tflocation).text)
+                json.put("name", view.findViewById<TextView>(R.id.etName).text)
+                json.put("date", view.findViewById<TextView>(R.id.etDate).text)
+                json.put("time", view.findViewById<TextView>(R.id.etTime).text)
+                json.put("location", view.findViewById<TextView>(R.id.etLocation).text)
             } catch (e: JSONException) {
                 println("path fail")
             }
@@ -142,6 +142,7 @@ class EditPage : Fragment(), View.OnClickListener{
     override fun onClick(v: View?) {
         when(v!!.id)
         {
+
         }
     }
 }

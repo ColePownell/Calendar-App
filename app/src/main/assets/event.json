@@ -1,3 +1,4 @@
 [
-{"name": "Sample event", "date": "1-7-2022", "time": "1:00", "location": "Your location"}
+  {"name": "Sample event", "date": "1-7-2022", "time": "1:00", "location": "Your location"},
+  {"name": "Sample event", "date": "1-7-1990", "time": "1:00", "location": "Your location"}
 ]
