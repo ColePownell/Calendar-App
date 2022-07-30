@@ -67,6 +67,9 @@
         <argument android:name="eventdate" android:defaultValue="None"/>
         <argument android:name="eventtime" android:defaultValue="None"/>
         <argument android:name="eventlocation" android:defaultValue="None"/>
+        <action
+            android:id="@+id/action_editPage_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
 
 </navigation>

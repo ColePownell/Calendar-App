@@ -46,11 +46,12 @@ class editPage : Fragment(), View.OnClickListener{
         view.findViewById<Button>(R.id.deleteBTN).setOnClickListener(this)
         view.findViewById<Button>(R.id.editBTN).setOnClickListener(this)
     }
-    
+
     override fun onClick(v: View?) {
         when(v!!.id)
         {
-
+            R.id.deleteBTN -> navController!!.navigate(R.id.action_editPage_to_navigation_home)
+            R.id.editBTN -> navController!!.navigate(R.id.action_editPage_to_navigation_home)
         }
     }
 }
