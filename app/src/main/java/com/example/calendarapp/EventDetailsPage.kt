@@ -39,6 +39,7 @@ class EventDetailsPage : Fragment(), View.OnClickListener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+        //set text to arguments
         view.findViewById<TextView>(R.id.eventName).text = eventname
         view.findViewById<TextView>(R.id.eventTime).text = eventtime
         view.findViewById<TextView>(R.id.eventDate).text = eventdate
@@ -50,6 +51,7 @@ class EventDetailsPage : Fragment(), View.OnClickListener{
         when(v!!.id)
         {
             R.id.sendEditBTN -> {
+                //send event details to edit event page
                 val bundle = bundleOf("eventdate" to eventdate,
                     "eventtime" to eventtime,
                     "eventlocation" to eventlocation,

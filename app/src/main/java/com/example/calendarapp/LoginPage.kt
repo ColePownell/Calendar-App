@@ -78,8 +78,6 @@ var navController: NavController? = null
                     Toast.LENGTH_SHORT
                 ).show()
 
-
-
         }
     }
 
